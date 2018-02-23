@@ -1,0 +1,264 @@
+html {
+    margin: 0px;
+}
+
+body {
+    margin: 0;
+    background: url("/static/images/background_img.jpg");
+    background-size: cover;
+}
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   User Login Page    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+#user_login_page {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    background-color: #1a8cff;
+    border-radius: 5px;
+    width: 25vw;
+    line-height: 5vh;
+    height: 45vh;
+}
+
+#login_img {
+    width: 25vw;
+    height: 45vh;
+    position: absolute;
+    top: 30%;
+    right: 50%;
+}
+
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   Home Page   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+#fixed {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    margin: 0px;
+}
+
+#title {
+    display: inline-block;
+    margin: 0px;
+    height: 15vh;
+    border-bottom: solid #0E3868 1vh;
+    float: top;
+    text-align: center;
+    background-color: #1a8cff;
+    width: 98.75vw;
+    overflow: hidden;
+}
+
+#section_title {
+    line-height: 15vh;
+    display: inline-block;
+    color: white;
+    font-size: 3em;
+    margin: 0px;
+    height: 10vh;
+}
+
+#logo {
+    max-height: 100%;
+    max-width: 100%;
+    float: left;
+}
+
+#login {
+    display: inline;
+    float: right;
+    float: top;
+    font-size: 3vh;
+    margin-top: 2vh;
+    height: 4vh;
+    line-height: 4vh;
+    color: #444;
+    border-right: 2px solid #444;
+}
+
+#login img {
+    max-height: 100%;
+    max-width: 100%;
+    float: left;
+    border: #444 1px solid;
+    border-radius: 5px;
+    margin-right: 1vh;
+}
+
+#logout {
+    display: inline;
+    float: right;
+    float: top;
+    font-size: 3vh;
+    margin-top: 2vh;
+    margin-right: 2vh;
+    height: 4vh;
+    line-height: 4vh;
+    color: yellow;
+    text-decoration: none;
+}
+
+#logout a {
+    text-decoration: none;
+    color: yellow;
+}
+
+.nav ul {
+    display: block;
+    width: 98.75vw;
+    float: left;
+    list-style: none;
+    background-color: #444;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 7.5vh;
+}
+
+.nav li {
+    font-size: 1.2em;
+    display: inline;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    float: left;
+    text-align: center;
+    line-height: 7.5vh;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: .3s background-color;
+}
+
+.nav a:hover {
+    background-color: #005f5f;
+}
+
+#search {
+    float: right;
+    height: 6.75vh;
+}
+
+#search_button {
+    background-color: green;
+    float: right;
+    height: 7.5vh;
+    line-height: 7.5vh;
+    width: 45px;
+    margin: 0px;
+}
+
+#current_page_title {
+    height: 10vh;
+    display: block;
+    margin-top: 25vh;
+    border-bottom: 5px solid gray;
+    line-height: 10vh;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    font-size: 2.5em;
+    color: white;
+    font-weight: bolder;
+}
+
+#content {
+    border-right: 1px black solid;
+    margin-right: 10px;
+}
+
+#side_menu {
+    height: 100vh;
+    border-left: 1px solid black;
+    padding-left: 2vw;
+    float: right;
+    margin-top: 9vh;
+    margin-right: 4vw;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#temp_v_humidity {
+    float: right;
+    margin-right: 2vw;
+    margin-top: 9vh;
+    display: block;
+    margin-left: 15vw;
+    height: 40vh;
+    width: 50vw;
+    border: white 5px solid;
+}
+
+#weather_widget {
+    border-radius: 10px;
+    background-color: white;
+    width: 20vw;
+    height: 38vh;
+}
+
+#weather_widget header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    line-height: 8vh;
+    height: 8vh;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 2em;
+    background-color: #444;
+}
+
+#actual_widget {
+    margin-top: 2vh;
+}
+
+#SM_v_humidity {
+    float: right;
+    margin-right: 2vw;
+    margin-top: 3vh;
+    display: block;
+    margin-left: 15vw;
+    height: 40vh;
+    width: 50vw;
+    border: white 5px solid;
+}
+
+#calendar {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: white;
+    width: 20vw;
+    height: 38vh;
+    float: right;
+    margin-top: 5vh;
+    overflow: hidden;
+}
+
+#calendar header {
+    line-height: 8vh;
+    height: 8vh;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 2em;
+    background-color: #444;
+}
+
+#actual_calendar_widget {
+    margin-top: 2vh;
+    margin-left: 10vh;
+}
+
+#SM_v_temp {
+    float: right;
+    margin-right: 2vw;
+    margin-top: 3vh;
+    display: block;
+    margin-left: 15vw;
+    height: 40vh;
+    width: 50vw;
+    border: white 5px solid;
+    margin-bottom: 10vh;
+}

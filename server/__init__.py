@@ -19,7 +19,7 @@ def create_server(*cfg):
     api = Api(api_bp)
 
     from .login import LoginAPI
-    api.add_resource(LoginAPI, '/login')
+    api.add_resource(LoginAPI, '/', '/login')
 
     server.register_blueprint(api_bp)
 
