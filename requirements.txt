@@ -1,3 +1,9 @@
 flask
-flask_sqlalchemy
+flask_bootstrap
+flask_bcrypt
+flask_login
 flask_restful
+flask_security
+flask_sqlalchemy
+pyjwt==1.4.2
+sqlalchemy_mixins

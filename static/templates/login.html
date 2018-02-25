@@ -1,57 +1,66 @@
-<!doctype html>
+{% extends "base.html" %}
 
-<html>
+{% block content %}
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1 class="form-signin-heading">Sensco Smart Irrigation Login Page</h1>
 
-<head>
-    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
-    <title>Login Page</title>
-</head>
-
-
-<body>
-<img src="/static/images/water.jpg" id="login_img">
-<div id="user_login_page">
-
-    <form>
-        <table>
-
-            <tr>
-                <td colspan=2
-                    style="background: rgb(68,68,68); text-align:center; font-size:5vh; height: 12vh; color: white;">
-                    Sensco Smart Irrigation Login Page
-                </td>
-            </tr>
-
-            <tr>
-                <td style="padding-left: 10px; padding-top: 5vh;">Username:</td>
-                <td style="padding-top: 5vh;"><input type="text" size=25vh name="userid"></td>
-            </tr>
-
-            <tr>
-                <td style="padding-left: 10px;">Password:</td>
-                <td><input type="Password" size=25vh name="pwd"></td>
-            </tr>
-
-            <tr>
-                <td>&nbsp</td>
-                <td style="float:right; padding-right: 3vh; padding-top: 6vh;"><input type="submit" onclick="check(this.form)" value="Login"></td>
-            </tr>
-
-        </table>
-    </form>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="/static/images/water.jpg" style="display: inline-block; width: 100%; height: 100%">
+                </div>
+                <div class="col-lg-8">
+                    <input title="emailField" id="emailField" class="form-control"
+                           type="email" name="email" placeholder="email" required autofocus/>
+                    <input title="pwdField" type="password" class="form-control" placeholder="password" id="pwdField" required/>
+                    <button type="button" class="btn btn-primary" id="loginAttempt">Submit</button>
+                    <button type="button" class="btn btn-primary" id="registerButton">Register</button>
+                    <p>Forgot your password?<button type="button" class="btn btn-primary">Click Here!</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+{% endblock %}
 
-<script language="javascript">
-    function check(form) {
-
-        if (form.userid.value == "admin" && form.pwd.value == "admin") {
-            window.open("/static/templates/sensco_splash.html")
-        }
-        else {
-            alert("Error: Password or Username incorrect")
-        }
-    }
+{% block scripts %}
+{{ super() }}
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            type: 'post',
+            url: '/authenticate-token',
+            success: function(response) {
+                if (response && response.hasOwnProperty("authenticated") && response['authenticated'] === true) {
+                    if (response.hasOwnProperty("auth_token")) {
+                        sessionStorage.setItem('access_key', response['auth_token']);
+                    }
+                    window.location.replace("/data");
+                }
+            }
+        });
+        $("button#loginAttempt").click(function() {
+            $.ajax({
+                type: 'post',
+                url: '/login',
+                data: JSON.stringify({
+                    "user_name": $("input#emailField").val().toString(),
+                    "user_password": $("input#pwdField").val().toString()
+                }),
+                success: function(response) {
+                    console.log("setting login", response);
+                    if (response && response.hasOwnProperty("authenticated") && response['authenticated'] === true) {
+                        console.log("cleared authenticated");
+                        if (response.hasOwnProperty("auth_token")) {
+                            sessionStorage.setItem('access_key', response['auth_token']);
+                            console.log("set access_token");
+                        }
+                        window.location.replace("/data");
+                    }
+                }
+            });
+        })
+    });
 </script>
-
-</body>
-</html>
+{% endblock %}

@@ -1,29 +1,10 @@
-<!doctype html>
-
-<html>
-
-<head> <!--starts info used by search engines for our web page-->
-
-<link rel="stylesheet" type="text/css" href="../css/styles.css">
-
-<title> Sensco Smart Irrigation </title>
-
-<meta name="description" content="The web app of the Sensco Smart Irrigation system"/>
-
-<meta name="keywords" content="Sensco, Smart Irrigation, Water Conservation"/>
-
-<meta http-equiv="author" content="Lucas Humpal, Fasbir Anwar"/>
-
-<meta http-equiv="content language" content="en-us"/>
-</head> <!--end info used by search engines for our web page-->
-
-
-<body> <!--this is where all the structure is, the styles.css is where all the style is. For more info look up HTML and CSS-->
+{% extends "base.html" %}
+{% block content %}
 
 <div id="fixed"> <!--name of section is "fixed"-->
 
 <div id="title">
-<img src="../images/logo.png" id="logo"> <!--pulls in image-->
+<img src="/static/images/logo.png" id="logo"> <!--pulls in image-->
 <div id="section_title">
 Sensco Smart Irrigation <!--title seen on page-->
 
@@ -34,7 +15,7 @@ Sensco Smart Irrigation <!--title seen on page-->
 
 <div id="logout"> <a href="login.html"> &nbsp Logout </a></div> <!--an anchor is used here-->
 <div id="login">
-<img src="../images/login.png">
+<img src="/static/images/login.png">
 Hello, <span style="text-decoration:underline;"><a href="user_info.html">John Doe</a></span> &nbsp <!--inline style used-->
 </div>
 
@@ -87,5 +68,22 @@ Dashboard
 
 
 
-</body> 
-</html>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    $(document).ready(function() {
+        $.ajax({
+			type: 'post',
+			url: '/data',
+			contentType:  "application/json; charset=utf-8",
+			success : function(response) {
+			    console.log(response);
+			    console.log("successful!");
+				// sessionStorage.setItem('access_key', response['auth_token']);
+			 }
+		});
+    });
+</script>
+{% endblock %}
