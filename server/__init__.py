@@ -1,6 +1,8 @@
 from flask import Flask, Blueprint
 from flask_restful import Api
 
+from .server import build_server
+
 
 def create_server(*cfg):
     server = Flask(
@@ -18,9 +20,13 @@ def create_server(*cfg):
     api_bp = Blueprint('backend', __name__)
     api = Api(api_bp)
 
-    from .login import LoginAPI
+    from .data import DataAPI
+    from .login import LoginAPI, RefreshTokenAPI, AuthenticateTokenAPI
     api.add_resource(LoginAPI, '/', '/login')
+    api.add_resource(RefreshTokenAPI, '/refresh-token')
+    api.add_resource(AuthenticateTokenAPI, '/authenticate-token')
+    api.add_resource(DataAPI, '/data')
 
     server.register_blueprint(api_bp)
 
-    return server
+    return build_server(server)

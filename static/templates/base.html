@@ -1,0 +1,45 @@
+{% extends "bootstrap/base.html" %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+{% endblock %}}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authorization', sessionStorage.getItem('access_key'));
+                xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+            }
+        });
+        function onLoad() {
+            $.ajax({
+                type: 'post',
+                url: '/refresh-token',
+                success : function(response) {
+                    console.log("refreshing-token", response);
+                    if (response && response.hasOwnProperty("auth_token")) {
+                        sessionStorage.setItem('access_key', response['auth_token']);
+                        setTimeout(onLoad, 25000);
+                    } else {
+                        console.log(window.location);
+                        if (window.location.pathname !== '/' && window.location.pathname !== '/login') {
+                            window.location.replace("/");
+                        }
+                    }
+                }
+            });
+        }
+        onLoad();
+    });
+</script>
+{% endblock %}
