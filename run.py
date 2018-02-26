@@ -12,3 +12,4 @@ if __name__ == '__main__':
     # with server.app_context():
     #     unittest.main()
     server.run(port=int(port))
+
