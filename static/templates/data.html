@@ -7,110 +7,24 @@
 
         <div class="row">
             <div class="col-md-8">
-                <img id="temp_v_humidity" src="/static/images/temp_v_humidity.PNG">
-                <img id="SM_v_humidity" src="/static/images/SM_v_humidity.PNG"><!--imported images-->
-                <img id="SM_v_temp" src="/static/images/SM_v_temp.PNG">
+                <iframe width="800" height="600"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiMTdhMmI3YWYtN2Y0YS00MmFkLWFjYjAtMjg2ZjRkMTdhNDQwIiwidCI6ImIxOWMxMzRhLTE0YzktNGQ0Yy1hZjY1LWM0MjBmOTRjOGNiYiIsImMiOjN9"
+                        frameborder="0" allowFullScreen></iframe>
             </div>
             <div class="col-md-4">
-                <!--the way i set this up was using three different divisions, used to achieve color and shape-->
-                <header> 7 Day Forecast</header>
-                <div id="actual_widget">
-
-                    <!-- weather widget start, I copied this code from internet -->
-                    <div id="m-booked-weather-bl250-36556">
-                        <div class="booked-wzs-250-175 weather-customize"
-                             style="background-color:#11161a;width:250px;" id="width1">
-                            <div class="booked-wzs-250-175_in">
-                                <div class="booked-wzs-250-175-data">
-                                    <div class="booked-wzs-250-175-left-img wrz-18">
-                                        <a target="_blank" href="http://www.booked.net/">
-                                            <img src="//s.bookcdn.com/images/letter/logo.gif" alt="booked.net"/>
-                                        </a>
-                                    </div>
-                                    <div class="booked-wzs-250-175-right">
-                                        <div class="booked-wzs-day-deck">
-                                            <div class="booked-wzs-day-val">
-                                                <div class="booked-wzs-day-number"><span class="plus">+</span>71
-                                                </div>
-                                                <div class="booked-wzs-day-dergee">
-                                                    <div class="booked-wzs-day-dergee-val">&deg;</div>
-                                                    <div class="booked-wzs-day-dergee-name">F</div>
-                                                </div>
-                                            </div>
-                                            <div class="booked-wzs-day">
-                                                <div class="booked-wzs-day-d">H: <span class="plus">+</span>71&deg;
-                                                </div>
-                                                <div class="booked-wzs-day-n">L: <span class="plus">+</span>66&deg;
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="booked-wzs-250-175-info">
-                                            <div class="booked-wzs-250-175-city smolest">San Marcos</div>
-                                            <div class="booked-wzs-250-175-date">Saturday, 11 November</div>
-                                            <div class="booked-wzs-left"><span class="booked-wzs-bottom-l">See 7-Day Forecast</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a target="_blank" href="http://www.booked.net/weather/san-marcos-1573">
-                                    <table cellpadding="0" cellspacing="0" class="booked-wzs-table-250">
-                                        <tr>
-                                            <td>Sun</td>
-                                            <td>Mon</td>
-                                            <td>Tue</td>
-                                            <td>Wed</td>
-                                            <td>Thu</td>
-                                            <td>Fri</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="week-day-ico">
-                                                <div class="wrz-sml wrzs-18"></div>
-                                            </td>
-                                            <td class="week-day-ico">
-                                                <div class="wrz-sml wrzs-01"></div>
-                                            </td>
-                                            <td class="week-day-ico">
-                                                <div class="wrz-sml wrzs-18"></div>
-                                            </td>
-                                            <td class="week-day-ico">
-                                                <div class="wrz-sml wrzs-18"></div>
-                                            </td>
-                                            <td class="week-day-ico">
-                                                <div class="wrz-sml wrzs-18"></div>
-                                            </td>
-                                            <td class="week-day-ico">
-                                                <div class="wrz-sml wrzs-01"></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="week-day-val"><span class="plus">+</span>71&deg;</td>
-                                            <td class="week-day-val"><span class="plus">+</span>73&deg;</td>
-                                            <td class="week-day-val"><span class="plus">+</span>73&deg;</td>
-                                            <td class="week-day-val"><span class="plus">+</span>75&deg;</td>
-                                            <td class="week-day-val"><span class="plus">+</span>79&deg;</td>
-                                            <td class="week-day-val"><span class="plus">+</span>74&deg;</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="week-day-val"><span class="plus">+</span>64&deg;</td>
-                                            <td class="week-day-val"><span class="plus">+</span>60&deg;</td>
-                                            <td class="week-day-val"><span class="plus">+</span>64&deg;</td>
-                                            <td class="week-day-val"><span class="plus">+</span>63&deg;</td>
-                                            <td class="week-day-val"><span class="plus">+</span>65&deg;</td>
-                                            <td class="week-day-val"><span class="plus">+</span>60&deg;</td>
-                                        </tr>
-                                    </table>
-                                </a></div>
-                        </div>
-                    </div>
+                <div class="row" align="right">
+                    <h1> 7 Day Forecast</h1>
+                    <!-- weather widget start -->
+                    <a target="_blank" href="http://www.booked.net/weather/san-marcos-1573">
+                        <img src="https://w.bookcdn.com/weather/picture/3_1573_1_1_137AE9_160_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=79467"  alt="booked.net"/>
+                    </a><!-- weather widget end -->
                 </div>
 
-                <div id="calendar">
-                    <header> Calendar</header>
-                    <div id="actual_calendar_widget">
-                        <iframe id='cv_if1'
-                                src='http://cdn.instantcal.com/cvir.html?id=cv_nav1&theme=XGY&ntype=cv_datepicker&border_radius=5'
-                                allowTransparency='true' scrolling='no' frameborder=0 height=200 width=200></iframe>
-                    </div>
+                <div class="row" align="right">
+                    <h1> Calendar</h1>
+                    <iframe id='cv_if1' src='http://cdn.instantcal.com/cvir.html?id=cv_nav1&theme=XGY&ntype=cv_datepicker&border_radius=5'
+                            allowTransparency='true' scrolling='no' frameborder=0 height=200 width=200>
+                    </iframe>
                 </div>
             </div>
         </div>
