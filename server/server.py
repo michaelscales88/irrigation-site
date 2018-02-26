@@ -1,7 +1,9 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_bootstrap import Bootstrap, WebCDN
-from flask_login import LoginManager, login_required
+from flask_login import LoginManager
+from flask_nav import Nav
+from flask_nav.elements import Navbar, View
 from flask_restful import reqparse
 
 from .models import BaseModel
@@ -10,6 +12,7 @@ from .models import BaseModel
 db = SQLAlchemy(model_class=BaseModel)
 bcrypt = Bcrypt()
 login_manager = LoginManager()
+nav = Nav()
 
 
 def build_server(server):
@@ -24,6 +27,9 @@ def build_server(server):
         Bootstrap(server)
         # Configure external js libraries
         add_cdns(server)
+        # Configure navigation
+        add_nav_elements()
+        nav.init_app(server)
 
         # Import models that need to be created
         from server.login.models import User
@@ -61,3 +67,12 @@ def add_cdns(server):
     #     'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/'
     # )
     pass
+
+
+def add_nav_elements():
+    nav.register_element(
+        'top',
+        Navbar(
+            View('Home', 'backend.loginapi'),
+        )
+    )

@@ -2,6 +2,7 @@ flask
 flask_bootstrap
 flask_bcrypt
 flask_login
+flask_nav
 flask_restful
 flask_security
 flask_sqlalchemy
