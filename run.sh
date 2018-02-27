@@ -2,7 +2,7 @@
 
 python get-pip.py
 
-venv="test/"
+venv="venv/"
 
 if ! [ -d "$venv" ]
 then

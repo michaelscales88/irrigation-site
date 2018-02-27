@@ -18,6 +18,10 @@ class LoginAPI(Resource):
         User.session.commit()
 
     def get(self):
+        user = User.get_id(1)
+        if not user:
+            user = User("admin@email.com", '1234', admin=True)
+            user.save()
         return make_response(
             render_template(
                 'login.html',
