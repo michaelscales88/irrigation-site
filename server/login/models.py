@@ -1,3 +1,4 @@
+# login/models.py
 import jwt
 from datetime import datetime, timedelta
 from flask import current_app
@@ -47,7 +48,7 @@ class User(db.Model, UserMixin):
             }
             return jwt.encode(
                 payload,
-                current_app.config.get('SECRET_KEY', 'I AM A SECRET'),
+                current_app.config['SECRET_KEY'],
                 algorithm='HS256'
             )
         except Exception as e:

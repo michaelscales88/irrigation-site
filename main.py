@@ -1,15 +1,12 @@
 if __name__ == '__main__':
+    """
+    Start the server by running:
+    python main.py 8080 development.cfg
+    """
     import sys
-
     from server import create_server
-    from run_tests import TestUserModel
     port = sys.argv[1]
-    args = sys.argv[2:]
-
-    # Unit testing stuff
-    # import unittest
+    args = sys.argv[1:]
     server = create_server(*args)
-    # with server.app_context():
-    #     unittest.main()
     server.run(port=int(port))
 
