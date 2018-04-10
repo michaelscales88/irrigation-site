@@ -28,6 +28,7 @@
 {{ super() }}
 <script>
     $(document).ready(function() {
+        // If you're already logged in this will redirect you to the data page.
         $.ajax({
             type: 'post',
             url: '/authenticate-token',
@@ -40,6 +41,7 @@
                 }
             }
         });
+        // This is where the program sends data to the server to try and login.
         $("button#loginAttempt").click(function() {
             $.ajax({
                 type: 'post',
@@ -49,12 +51,11 @@
                     "user_password": $("input#pwdField").val().toString()
                 }),
                 success: function(response) {
-                    console.log("setting login", response);
+                    // If the response has a token and says we're authenticated
+                    // then we can go to the data page.
                     if (response && response.hasOwnProperty("authenticated") && response['authenticated'] === true) {
-                        console.log("cleared authenticated");
                         if (response.hasOwnProperty("auth_token")) {
                             sessionStorage.setItem('access_key', response['auth_token']);
-                            console.log("set access_token");
                         }
                         window.location.replace("/data");
                     }

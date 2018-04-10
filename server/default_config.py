@@ -1,7 +1,9 @@
 # server/default_config.py
 import os
 
-SECRET_KEY = os.urandom(24)  # Generate a random session key
+# Generate a random session key
+SECRET_KEY = os.environ.get('SECRET_KEY', os.urandom(24))
+
 BCRYPT_LOG_ROUNDS = 10
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -11,4 +13,3 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.environ.get(
     'SQLALCHEMY_DATABASE_URI',
     os.path.join(PACKAGE_DIR, 'instance/local_app.db')
 )
-
