@@ -11,7 +11,7 @@ then
    python get-pip.py
 fi
 
-venv="venv"
+venv="venv/"
 
 if ! [ -d "$venv" ]
 then
