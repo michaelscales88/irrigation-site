@@ -1,18 +1,47 @@
 {% extends "bootstrap/base.html" %}
 
-{% block styles %}
-{{ super() }}
+<!-- CSS section -->
+{% block styles %} {{ super() }}
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+
+<!-- Local CSS settings -->
 <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
-{% endblock %}
 
-{% block navbar %}
-{{nav.top.render(id='top-navbar')}}
-{% endblock %}
+<!--[if lt IE 9]>
+<style>
+    header
+    {
+        margin: 0 auto 20px auto;
+    }
+    #four_columns .img-item figure span.thumb-screen
+    {
+        display:none;
+    }
+</style>
+<![endif]-->
+{% endblock styles %}
 
-{% block scripts %}
-{{ super() }}
+<!-- JavaScript section -->
+{% block scripts %} {{ super() }}
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<!-- This section manages all the login stuff -->
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         // Set all our ajax calls to have the necessary headers for the server.
         $.ajaxSetup({
             beforeSend: function (xhr) {
@@ -24,7 +53,7 @@
             $.ajax({
                 type: 'post',
                 url: '/refresh-token',
-                success : function(response) {
+                success: function (response) {
                     // If the auth_token is present put it in session storage
                     // make the call again in 25 seconds to refresh the token.
                     if (response && response.hasOwnProperty("auth_token")) {
@@ -42,5 +71,4 @@
         // Make initial call on document load.
         onLoad();
     });
-</script>
-{% endblock %}
+</script> {% endblock scripts %}

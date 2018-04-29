@@ -1,0 +1,17 @@
+#footer-area {
+	background-color: black;
+  text-align: justify;
+}
+
+#footer-area .team {
+  display: inline-block;
+  width: auto;
+  height: 90%;
+  margin: 10px;
+}
+
+#footer-area:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}

@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+
+<!-- Set the title for the page -->
+{% block title %}Dashboard{% endblock title %}
+
+<!-- Set the styles for this particular page -->
+{% block styles %} {{ super() }}
+<link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/static/css/style_dashboard.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/static/css/lightbox/lightbox.css" type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Baumans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/static/css/footer.css" type='text/css'> {% endblock styles %}
+
+<!-- Set the content inside the page -->
+{% block content %} {{ super() }}
+<div class="container-fluid">
+    <header>
+        <div class="toggleMobile">
+            <span class="menu1"></span>
+            <span class="menu2"></span>
+            <span class="menu3"></span>
+        </div>
+        <div id="mobileMenu">
+            <ul>
+                <li>
+                    <a href="/data">Home</a>
+                </li>
+                <li>
+                    <a id="logout2">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <h1>Sensco Solutions</h1>
+        <p>Designing Smart Solutions That Matter</p>
+
+        <nav>
+            <h2 class="hidden">Our navigation</h2>
+            <ul>
+                <li>
+                    <a href="/data">Home</a>
+                </li>
+                <li>
+                    <a id="logout">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="container">
+        <h2 class="hidden"></h2>
+        <article id="slider_content1">
+            <h3>Our vision</h3>
+            <p>Develop an integrated hardware and software solution to conserve water waste in an irrigation system </p>
+        </article>
+        <article id="slider_content2">
+            <h3>Internet of Things</h3>
+            <p>The Sensco Smart Irrigation System utilizes the IoT. Data is being connected and continuosly streamed during
+                operation.
+            </p>
+        </article>
+        <article id="slider_content3">
+            <h3>Helping the Environment </h3>
+            <p>Using water-saving techniques can save you money and diverts less water from our rivers, bays, and estuaries,
+                which helps keep the environment healthy.</p>
+        </article>
+        <div id="slides">
+            <img src="/static/images/waterfall_slider.jpg" width="974" height="344" alt="Mountain Stream">
+            <img src="/static/images/iot-platform.jpg" width="974" height="344" alt="Trees">
+            <img src="/static/images/mountain.jpg" width="974" height="344" alt="Tornado">
+        </div>
+    </section>
+    <section id="spacer">
+        <h2 class="hidden">Title</h2>
+        <p></p>
+
+        <div class="search">
+            <form action="#">
+                <input type="text" name="sitesearch" value="Search..." />
+                <input type="submit" name="start_search" class="button" value="GO" />
+            </form>
+        </div>
+    </section>
+
+    <section id="switches">
+        <!-- Rounded switch -->
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+
+        <!-- Rounded switch -->
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+
+        <!-- Rounded switch -->
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+
+        <!-- Rounded switch -->
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </section>
+
+    <p style="text-align: center;">
+        <iframe width="900" height="600" align="middle" src="https://app.powerbi.com/view?r=eyJrIjoiMTdhMmI3YWYtN2Y0YS00MmFkLWFjYjAtMjg2ZjRkMTdhNDQwIiwidCI6ImIxOWMxMzRhLTE0YzktNGQ0Yy1hZjY1LWM0MjBmOTRjOGNiYiIsImMiOjN9"
+            frameborder="0" allowFullScreen="true"></iframe>
+    </p>
+
+
+    <section id="text_columns">
+        <h2 class="hidden">Blindtext</h2>
+
+        <article class="column1">
+            <h3>Introduction</h3>
+            <p>
+                Water conservation efforts are essential with the continuous environmental and technological changes happening today. The
+                increasing population and excessive energy consumption have made finding immediate solutions vital to preserving
+                the precious resource, water. Texas State University and SENSCO are committed to resolving this global issue.
+                SENSCO is a startup devoted to leaving the world better than we found it by tackling important social issues
+                such as water conservation. Our Smart Irrigation System will implement wireless sensors that transmit data
+                to the cloud to be collected and analyzed. The cloud analysis will determine a watering schedule for the
+                environment being monitored. The goal of this project is to demonstrate a minimally intrusive design that
+                can be introduced to residential and commercial irrigation systems
+            </p>
+        </article>
+        <section class="column2">
+            <h3 class="hidden">Lorem Impsum</h3>
+            <article class="image-row">
+                <h4 class="hidden">Dolor sit</h4>
+                <a href="/static/images/mvc_diagram.png" rel="lightbox" title="MVC Diagram">
+                    <img src="/static/images/mvc_diagram.png" style="width: 240px" alt="MVC Diagram" />
+                </a>
+
+                <p>MVC Model used for web interface</p>
+            </article>
+            <article class="image-row">
+                <h4 class="hidden">Ipsum</h4>
+                <a href="/static/images/func_block_diagram.png" rel="lightbox" title="Functional Block Diagram">
+                    <img src="/static/images/func_block_diagram.png" style="width: 240px" alt="Functional Block Diagram" />
+                    <p>Sensco team's Functional block diagram</p>
+                </a>
+            </article>
+        </section>
+    </section>
+</div>
+<div class="container-fluid">
+    <div id="footer-area">
+        <div class="thumbnail team">
+            <a target="_blank" href="/static/images/team/fasbir_anwar.png">
+                <img src="/static/images/team/fasbir_anwar.png" alt="Fasbir Anwar">
+                <div class="caption">
+                    <p>Fasbir Anwar</p>
+                </div>
+            </a>
+        </div>
+        <div class="thumbnail team">
+            <a target="_blank" href="/static/images/team/chris_ramirez.png">
+                <img src="/static/images/team/chris_ramirez.png" alt="Chris Ramirez">
+                <div class="caption">
+                    <p>Chris Ramirez</p>
+                </div>
+            </a>
+        </div>
+        <div class="thumbnail team">
+            <a target="_blank" href="/static/images/team/alex_olsen.png">
+                <img src="/static/images/team/alex_olsen.png" alt="Alex Olsen">
+                <div class="caption">
+                    <p>Alex Olsen</p>
+                </div>
+            </a>
+        </div>
+        <div class="thumbnail team">
+            <a target="_blank" href="/static/images/team/lucas_humpal.png">
+                <img src="/static/images/team/lucas_humpal.png" alt="Lucas Humpal">
+                <div class="caption">
+                    <p>Lucas Humpal</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="thumbnail team">
+            <a target="_blank" href="/static/images/team/kevin_hua.png">
+                <img src="/static/images/team/kevin_hua.png" alt="Kevin Hua">
+                <div class="caption">
+                    <p>Kevin Hua</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
+
+<!-- JavaScript loading area -->
+{% block scripts %} {{ super() }}
+<script src="/static/js/vendor/modernizr.min.js"></script>
+<script src="/static/js/vendor/respond.min.js"></script>
+
+<!-- This file is missing -->
+<!--<script src="/static/lightbox/js/lightbox.js"></script>-->
+<script src="/static/js/vendor/prefixfree.min.js"></script>
+<script src="/static/js/vendor/jquery.slides.min.js"></script>
+<script src="/static/js/script.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#slides').slidesjs({
+            height: 235,
+            navigation: false,
+            pagination: false,
+            effect: {
+                fade: {
+                    speed: 400
+                }
+            },
+            callback: {
+                start: function (number) {
+                    $("#slider_content1,#slider_content2,#slider_content3").fadeOut(500);
+                },
+                complete: function (number) {
+                    $("#slider_content" + number).delay(500).fadeIn(1000);
+                }
+            },
+            play: {
+                active: false,
+                auto: true,
+                interval: 8000,
+                pauseOnHover: false,
+                effect: "fade"
+            }
+        });
+    });
+    $(document).ready(function () {
+        function logout() {
+            sessionStorage.clear();
+            window.location.replace("/");
+        }
+
+        $("#logout").on("click", logout);
+        $("#logout2").on("click", logout);
+
+        let css_file = document.createElement("link");
+        css_file.setAttribute("rel", "stylesheet");
+        css_file.setAttribute("type", "text/css");
+        css_file.setAttribute("href", 'https://s.bookcdn.com/css/w/booked-wzs-widget-275.css?v=0.0.1');
+        document.getElementsByTagName("head")[0].appendChild(css_file);
+    });
+</script>
+<script type="text/javascript" charset="UTF-8" src="https://widgets.booked.net/weather/info?action=get_weather_info&ver=6&cityID=1573&type=3&scode=124&ltid=3458&domid=w209&anc_id=89935&cmetric=0&wlangID=1&color=11161a&wwidth=250&header_color=ffffff&text_color=333333&link_color=08488D&border_form=1&footer_color=ffffff&footer_text_color=333333&transparent=0"></script> {% endblock %}
