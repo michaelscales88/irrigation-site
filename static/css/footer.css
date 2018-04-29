@@ -1,13 +1,17 @@
 #footer-area {
-  background-color: black;
+	background-color: black;
+  text-align: justify;
 }
 
-.footer-caption {
-  height: 100%;
+#footer-area .team {
+  display: inline-block;
+  width: auto;
+  height: 90%;
+  margin: 10px;
 }
 
-.col-centered{
-  float: none;
-  margin: 0 auto;
-  text-align: center;
+#footer-area:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
 }

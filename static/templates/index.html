@@ -7,10 +7,9 @@
 {% block styles %} {{ super() }}
 <link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="/static/css/style_dashboard.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="/static/css/lightbox/lightbox.css" type='text/css'  />
+<link rel="stylesheet" href="/static/css/lightbox/lightbox.css" type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans|Baumans' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/static/css/footer.css" type='text/css'> 
-{% endblock styles %}
+<link rel="stylesheet" href="/static/css/footer.css" type='text/css'> {% endblock styles %}
 
 <!-- Set the content inside the page -->
 {% block content %} {{ super() }}
@@ -151,65 +150,53 @@
 </div>
 <div class="container-fluid">
     <div id="footer-area">
-        <div class="col-centered">
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="thumbnail">
-                        <a href="/static/images/team/alex_olsen.png">
-                            <img src="/static/images/team/alex_olsen.png" alt="Alex Olsen" style="width:100%">
-                            <div class="caption">
-                                <p>Alex Olsen</p>
-                            </div>
-                        </a>
-                    </div>
+        <div class="thumbnail team">
+            <a target="_blank" href="/static/images/team/fasbir_anwar.png">
+                <img src="/static/images/team/fasbir_anwar.png" alt="Fasbir Anwar">
+                <div class="caption">
+                    <p>Fasbir Anwar</p>
                 </div>
-                <div class="col-md-2">
-                    <div class="thumbnail">
-                        <a href="/static/images/team/lucas_humpal.png">
-                            <img src="/static/images/team/lucas_humpal.png" alt="Lucas Humpal" style="width:100%">
-                            <div class="caption">
-                                <p>Lucas Humpal</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="thumbnail">
-                        <a href="/static/images/team/chris_ramirez.png">
-                            <img src="/static/images/team/chris_ramirez.png" alt="Chris Ramirez" style="width:100%">
-                            <div class="caption">
-                                <p>Chris Ramirez</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="thumbnail">
-                        <a href="/static/images/team/kevin_hua.png">
-                            <img src="/static/images/team/kevin_hua.png" alt="Kevin Hua" style="width:100%">
-                            <div class="caption">
-                                <p>Kevin Hua</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="thumbnail">
-                        <a href="/static/images/team/fasbir_anwar.png">
-                            <img src="/static/images/team/fasbir_anwar.png" alt="Fasbir Anwar" style="width:100%">
-                            <div class="caption">
-                                <p>Fasbir Anwar</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            </a>
         </div>
+        <div class="thumbnail team">
+            <a target="_blank" href="/static/images/team/chris_ramirez.png">
+                <img src="/static/images/team/chris_ramirez.png" alt="Chris Ramirez">
+                <div class="caption">
+                    <p>Chris Ramirez</p>
+                </div>
+            </a>
+        </div>
+        <div class="thumbnail team">
+            <a target="_blank" href="/static/images/team/alex_olsen.png">
+                <img src="/static/images/team/alex_olsen.png" alt="Alex Olsen">
+                <div class="caption">
+                    <p>Alex Olsen</p>
+                </div>
+            </a>
+        </div>
+        <div class="thumbnail team">
+            <a target="_blank" href="/static/images/team/lucas_humpal.png">
+                <img src="/static/images/team/lucas_humpal.png" alt="Lucas Humpal">
+                <div class="caption">
+                    <p>Lucas Humpal</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="thumbnail team">
+            <a target="_blank" href="/static/images/team/kevin_hua.png">
+                <img src="/static/images/team/kevin_hua.png" alt="Kevin Hua">
+                <div class="caption">
+                    <p>Kevin Hua</p>
+                </div>
+            </a>
+        </div>
+
     </div>
 </div>
-{% endblock content %} 
+{% endblock content %}
 
-<!-- Script loading area -->
+<!-- JavaScript loading area -->
 {% block scripts %} {{ super() }}
 <script src="/static/js/vendor/modernizr.min.js"></script>
 <script src="/static/js/vendor/respond.min.js"></script>
@@ -255,15 +242,6 @@
 
         $("#logout").on("click", logout);
         $("#logout2").on("click", logout);
-        $.ajax({
-            type: 'post',
-            url: '/data',
-            success: function (response) {
-                console.log(response);
-                console.log("successful!");
-                // sessionStorage.setItem('access_key', response['auth_token']);
-            }
-        });
 
         let css_file = document.createElement("link");
         css_file.setAttribute("rel", "stylesheet");

@@ -1,38 +1,49 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
+<!-- Title area -->
+{% block title %}Sensco Login{% endblock title%} 
 
-{% block content %}
-<div class="container-fluid">
-    <div class="jumbotron">
-        <h1 class="form-signin-heading">Sensco Smart Irrigation Login Page</h1>
+<!-- CSS styles -->
+{% block styles %}{{super()}}
+<link rel="stylesheet" type="text/css" href="/static/css/style_login.css"> 
+{% endblock styles%} 
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4">
-                    <img src="/static/images/water.jpg" style="display: inline-block; width: 100%; height: 100%">
-                </div>
-                <div class="col-lg-8">
-                    <input title="emailField" id="emailField" class="form-control"
-                           type="email" name="email" placeholder="email" required autofocus/>
-                    <input title="pwdField" type="password" class="form-control" placeholder="password" id="pwdField" required/>
-                    <button type="button" class="btn btn-primary" id="loginAttempt">Submit</button>
-                    <button type="button" class="btn btn-primary" id="registerButton">Register</button>
-                    <p>Forgot your password?<button type="button" class="btn btn-primary">Click Here!</button></p>
+<!-- Page body -->
+{% block content %} {{ super() }}
+<div class="container-fluid text-center">
+    <div class="jumbotron vertical-center">
+        <div class="container-fluid text-center">
+            <h1 class="form-signin-heading">Sensco Smart Irrigation Login Page</h1>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img src="/static/images/water.jpg" style="display: inline-block; width: 100%; height: 100%">
+                    </div>
+                    <div class="col-lg-8">
+                        <input title="emailField" id="emailField" class="form-control" type="email" name="email" placeholder="email" required autofocus/>
+                        <input title="pwdField" type="password" class="form-control" placeholder="password" id="pwdField" required/>
+                        <button type="button" class="btn btn-primary" id="loginAttempt">Submit</button>
+                        <button type="button" class="btn btn-primary" id="registerButton">Register</button>
+                        <p>Forgot your password?
+                            <button type="button" class="btn btn-primary">Click Here!</button>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{% endblock %}
+{% endblock %} 
 
-{% block scripts %}
-{{ super() }}
+<!-- JavaScript section -->
+{% block scripts %} {{ super() }}
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         // If you're already logged in this will redirect you to the data page.
         $.ajax({
             type: 'post',
             url: '/authenticate-token',
-            success: function(response) {
+            success: function (response) {
                 if (response && response.hasOwnProperty("authenticated") && response['authenticated'] === true) {
                     if (response.hasOwnProperty("auth_token")) {
                         sessionStorage.setItem('access_key', response['auth_token']);
@@ -42,7 +53,7 @@
             }
         });
         // This is where the program sends data to the server to try and login.
-        $("button#loginAttempt").click(function() {
+        $("button#loginAttempt").click(function () {
             $.ajax({
                 type: 'post',
                 url: '/login',
@@ -50,7 +61,7 @@
                     "user_name": $("input#emailField").val().toString(),
                     "user_password": $("input#pwdField").val().toString()
                 }),
-                success: function(response) {
+                success: function (response) {
                     // If the response has a token and says we're authenticated
                     // then we can go to the data page.
                     if (response && response.hasOwnProperty("authenticated") && response['authenticated'] === true) {
@@ -63,5 +74,4 @@
             });
         })
     });
-</script>
-{% endblock %}
+</script> {% endblock %}

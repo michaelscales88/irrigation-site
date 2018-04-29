@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
-from flask_nav.elements import Navbar, View
 from flask_restful import reqparse
 
 from .models import BaseModel
