@@ -1,0 +1,13 @@
+#footer-area {
+  background-color: black;
+}
+
+.footer-caption {
+  height: 100%;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+}

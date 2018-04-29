@@ -37,7 +37,7 @@ class LoginAPI(Resource):
         return make_response(
             render_template(
                 'login.html',
-                title="Login Page"
+                title="Sensco Login"
             )
         )
 

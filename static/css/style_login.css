@@ -1,0 +1,61 @@
+body
+{
+        border-top:5px solid #1E90FF;
+        background:#ebe8de;
+        font-family: 'Open Sans', sans-serif;
+        color:#333333;
+}
+
+#user_login_page{
+	position:absolute;
+	top:30%;
+	left: 50%;
+	background-color: #1E90FF;
+	border-radius: 5px;
+	width: 25vw;
+	line-height: 5vh;
+	height: 45vh;
+}
+#login_img{
+	width:25vw;
+	height: 45vh;
+	position:absolute;
+	top:30%;
+	right: 50%;
+}
+
+#Login_title{
+	font-family: 'Baumans', cursive;
+	border-radius: 5px;
+	background: rgb(68,68,68); 
+	text-align:center; 
+	font-size:5vh; 
+	height: 12vh; 
+	color: white;
+}
+
+
+.button
+{
+        padding:7px 14px;
+        border: 1px solid #c3532e;
+        background-image: linear-gradient(bottom, #E56038 0%, #ff8c66 100%);
+        background-image: linear-gradient(to bottom, #ff8c66 0%, #E56038 100%);
+        background-color: #eb653c;
+        color: #EBE8DE;
+        text-shadow: 1px 1px 0px #ff8155;
+        text-decoration:none;
+        border-radius:5px;
+        box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+		margin:20px 25px 10px 10px;
+		
+		float:right;
+}
+
+.button:hover
+{
+        background:none #EBE8DE;
+        border-color: #EBE8DE;
+        text-shadow:none;
+        color: #4A463B;
+}

@@ -42,7 +42,7 @@ class User(db.Model, UserMixin):
         """
         try:
             payload = {
-                'exp': datetime.utcnow() + timedelta(days=0, seconds=30),
+                'exp': datetime.utcnow() + timedelta(minutes=current_app.config.get('LOGIN_DURATION_MINUTES')),
                 'iat': datetime.utcnow(),
                 'sub': user_id
             }

@@ -19,8 +19,8 @@ class DataAPI(Resource):
         """
         return make_response(
             render_template(
-                'data.html',
-                title="Data Page"
+                'index.html',
+                title="Dashboard"
             )
         )
 

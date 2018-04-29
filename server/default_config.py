@@ -13,3 +13,5 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.environ.get(
     'SQLALCHEMY_DATABASE_URI',
     os.path.join(PACKAGE_DIR, 'instance/local_app.db')
 )
+
+LOGIN_DURATION_MINUTES = int(os.environ.get('LOGIN_DURATION_MINUTES', 5))
